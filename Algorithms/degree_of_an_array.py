@@ -34,13 +34,10 @@ def degreeOfArray(arr):
     max_degree = 0
     min_length = len(arr)
     for k, v in values_dict.items():
-        l = v[1] - v[0]
+        lt = v[1] - v[0]
         degree = v[2]
         if l > 0:
-            if degree > max_degree:
-                min_length = l + 1
-                max_degree = degree
-            elif degree == max_degree and l < min_length:
+            if degree > max_degree or (degree == max_degree and lt < min_length):
                 min_length = l + 1
                 max_degree = degree
 
